@@ -95,7 +95,6 @@ void onStart(ServiceInstance service) async {
 
 void _startTimer(ServiceInstance service) {
   _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-    // logger.d("service is successfully running");
     if (!_pause && !_stop) {
       // use system time to calculate the remaining time
       DateTime now = DateTime.now();
@@ -112,6 +111,8 @@ void _startTimer(ServiceInstance service) {
       }
       if (_remainingDuration.isNegative) {
         _remainingDuration = Duration.zero;
+        _pause = true;
+        _stop = true;
       }
     }
     service.invoke('update', {
