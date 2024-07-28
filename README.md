@@ -16,5 +16,4 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 ## Example
-
-![image](image/screenshot.png)
+<img src="./image/screenshot.png" width="50%">
